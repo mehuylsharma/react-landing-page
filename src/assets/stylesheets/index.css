@@ -32,7 +32,55 @@
 }
 
 .page .layout .image-container img {
+  min-height: 100%;
+  min-width: 100%;
   margin-left: -50px;
+}
+
+.page .layout .image-container .container-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  bottom: 10px;
+  right: 51%;
+  width: 100px;
+  height: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page .layout .image-container .container-buttons button {
+  width: 40%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.page .layout .image-container .container-buttons button img {
+  width: 80%;
+  height: 100%;
+  margin-left: 1px;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transition: -webkit-filter 1s ease-out, -webkit-transform 0.5s ease-out;
+  transition: -webkit-filter 1s ease-out, -webkit-transform 0.5s ease-out;
+  transition: filter 1s ease-out, transform 0.5s ease-out;
+  transition: filter 1s ease-out, transform 0.5s ease-out, -webkit-filter 1s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.page .layout .image-container .container-buttons button img:hover {
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .page .layout .layout-info {
