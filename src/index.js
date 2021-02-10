@@ -1,107 +1,35 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './stylesheets/index.css';
-import Card from './Components/card';
-import './stylesheets/card.css';
-import Controller from './Components/controller';
-import './stylesheets/controller.css';
+import ImageContainer from './components/image-container';
+import {SearchBar, NavBar} from './components/bars';
+import './assets/stylesheets/index.css';
+
+const text = 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque purus semper eget duis at tellus at. Odio facilisis mauris sit amet massa. Arcu dictum varius duis at consectetur lorem donec massa sapien. Tellus elementum sagittis vitae et leo. Id cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Arcu bibendum at varius vel pharetra vel. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Et egestas quis ipsum suspendisse. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. '
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      dishes : [],
-      healthSB : {},
-      tastySB : {}
-    }
-    this.key = 'c2be40e62d8b42cabf73edbefecf6d47';
-  }
-
-  async componentDidMount() {
-    //let fetchData = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=${this.key}`);
-    /*
-    let fetchData = await fetch(`https://api.spoonacular.com/recipes/random?number=20&apiKey=${this.key}`);
-    let results = await fetchData.json();
-    this.setState({ dishes: results.recipes}); 
-    let fetchHealthySB = await fetch(`https://api.spoonacular.com/recipes/findByNutrients?minProtein=30&maxCarbs=30&maxFat=5&apiKey=${this.key}`);
-    let fetchTastySB = await fetch(`https://api.spoonacular.com/recipes/findByNutrients?maxProtein=30&minCarbs=50&minFat=10&apiKey=${this.key}`);
-    let healthSBResults = await fetchHealthySB.json();
-    let tastySBResults = await fetchTastySB.json(); */
-
-    let healthSBResults = {
-      id: 4, 
-      title: 'Mummy ki kadhi',
-      vegetarian: true,
-      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC',
-      healthScore: 100,
-      sustainable: true 
-    }
-
-    let tastySBResults = {
-      id: 5, 
-      title: 'Ishu ka Cake',
-      vegetarian: false,
-      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC',
-      healthScore: 2,
-      sustainable: false
-    }
-    
-    this.setState({ dishes : [
-        {
-          id: 0,
-          title: 'Layered Poppy Seed Pastries',
-          vegetarian: true,
-          image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC',
-          instructions: 'No instruct',
-          healthScore: 40,
-          sustainable: true
-        },
-        {
-          id: 1,
-          title: 'Layered Poppy Seed Pastries',
-          vegetarian: true,
-          image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC',
-          instructions: 'No instruct',
-          healthScore: 40,
-          sustainable: true
-        },
-        {
-          id: 2,
-          title: 'Layered Poppy Seed Pastries',
-          vegetarian: true,
-          image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC',
-          instructions: 'No instruct',
-          healthScore: 40,
-          sustainable: true
-        }
-      ],
-      healthSB : healthSBResults/* [Math.floor(Math.random()*6)] */,
-      tastySB : tastySBResults/* [Math.floor(Math.random()*6)] */
-    })
-    console.log(this.state.healthSB)
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="healthSB">
-          <Card key={this.state.healthSB.id} recipe={this.state.healthSB} />
-        </div>
-        <div className="main-content">
-          {this.state.dishes.map(recipe => (
-            <Card key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
-        <div className="controller"></div>
-        <div className="tastySB">
-          <Card key={this.state.tastySB.id} recipe={this.state.tastySB} />
-        </div>
-        <div className="controller">
-          <Controller />
-        </div>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div className="page">
+				<div className="menu-icon fixed"></div>
+				<SearchBar />
+				<div className="layout">
+					<ImageContainer />
+					<div className="layout-info">
+						<div className="inner">
+							<NavBar />
+							<div className="title">Atlantica Costa</div>
+							<div className="description">{text}</div>
+						</div>	
+						<div className="footer">
+							<span className="address">Reach us at: <br></br>13, Scranton Park Street, Scranton</span>
+						</div>
+						<img alt="logo" className="logo" src="/images/logo.png"></img>
+					</div>
+				</div>
+			</div>
+		)
+	}
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));

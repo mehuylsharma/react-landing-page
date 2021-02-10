@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "LG Cafe";
+  src: url("../fonts/LGCafe Light.ttf");
+}
+
+@font-face {
+  font-family: "Yeseva One";
+  src: url("../fonts/YesevaOne-Regular.ttf");
+}
+
+*, :root {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page {
+  color: #c9c9c9;
+  font-family: 'LG Cafe';
+}
+
+.page .layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.page .layout .image-container {
+  width: 50%;
+  background-color: #af9d9d;
+}
+
+.page .layout .image-container img {
+  margin-left: -50px;
+}
+
+.page .layout .layout-info {
+  width: 50%;
+  background-color: #2c2c2c;
+}
+
+.page .layout .layout-info .inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.page .layout .layout-info .inner .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
+  height: 60px;
+}
+
+.page .layout .layout-info .inner .nav-bar .item {
+  font-size: 25px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.page .layout .layout-info .inner .nav-bar .item:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+
+.page .layout .layout-info .inner .title {
+  font-family: 'Yeseva One';
+  margin-top: 5px;
+  font-size: 75px;
+  color: #e6e6e6;
+}
+
+.page .layout .layout-info .inner .description {
+  margin-top: 135px;
+  font-size: 22px;
+}
+
+.page .layout .layout-info .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 10%;
+  background-color: #242424;
+}
+
+.page .layout .layout-info .footer .address {
+  margin-top: 10px;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.page .layout .layout-info .logo {
+  width: 125px;
+  position: absolute;
+  right: 0px;
+  margin-right: 35px;
+}
+
+.page .menu-icon {
+  top: 60px;
+  width: 60px;
+  height: 60px;
+  background-color: #bd0101;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.page .menu-icon:hover {
+  cursor: pointer;
+  width: 90px;
+  -webkit-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+
+.page .search-bar {
+  width: 600px;
+  height: 90px;
+  left: 600px;
+  top: 215px;
+  text-align: center;
+}
+
+.page .search-bar input {
+  font-family: 'Yeseva One';
+  text-indent: 15px;
+  width: 85%;
+  height: 60%;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #c9c9c9;
+  background-color: #535353;
+  border: none;
+  -webkit-transition: width 0.35s ease-out, background-color 0.25s ease-in;
+  transition: width 0.35s ease-out, background-color 0.25s ease-in;
+}
+
+.page .search-bar input:hover {
+  width: 93%;
+  -webkit-transition: width 0.1s ease-in;
+  transition: width 0.1s ease-in;
+}
+
+.page .search-bar input:focus {
+  outline: none;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  -webkit-transition: width 0.2s ease-in, background-color 0.15s ease-in;
+  transition: width 0.2s ease-in, background-color 0.15s ease-in;
+}
+
+.page .search-bar input::-webkit-input-placeholder {
+  margin-left: 50px;
+}
+
+.page .search-bar input:-ms-input-placeholder {
+  margin-left: 50px;
+}
+
+.page .search-bar input::-ms-input-placeholder {
+  margin-left: 50px;
+}
+
+.page .search-bar input::placeholder {
+  margin-left: 50px;
+}
+
+.fixed {
+  position: fixed;
+}
+/*# sourceMappingURL=index.css.map */

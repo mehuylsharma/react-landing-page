@@ -1,0 +1,20 @@
+//Theme
+$base-color: rgb(44, 44, 44);
+$font-color: rgb(201, 201, 201);
+$font-color-light: rgb(230, 230, 230);
+
+//Other
+$icon-size: 60px;
+$search-bar-height: 90px;
+$search-bar-width: 600px;
+
+//fonts
+@font-face {
+    font-family: "LG Cafe";
+    src: url('../fonts/LGCafe\ Light.ttf');
+}
+
+@font-face {
+    font-family: "Yeseva One";
+    src: url('../fonts/YesevaOne-Regular.ttf');
+}
